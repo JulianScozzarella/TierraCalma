@@ -6,10 +6,11 @@
     <title>Tierra Calma | Velas Aromáticas de Soja</title>
     <style>
         :root {
-            --color-bg: #fbf9f6;
-            --color-primary: #8c7867;
-            --color-text: #4a443f;
-            --color-accent: #d4c5b9;
+            --color-bg: #f7f3ed; /* Arena cálido orgánico */
+            --color-primary: #4a3525; /* Marrón chocolate profundo */
+            --color-medium: #70533c; /* Marrón medio para acentos */
+            --color-accent: #decbba; /* Beige tierra para bordes */
+            --color-light: #efe6dc; /* Fondo de tarjetas y placeholders */
             --font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
@@ -21,35 +22,62 @@
 
         body {
             background-color: var(--color-bg);
-            color: var(--color-text);
+            color: var(--color-primary);
             font-family: var(--font-family);
             line-height: 1.6;
             padding: 20px;
         }
 
-        header {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        header h1 {
-            font-weight: 300;
-            letter-spacing: 4px;
-            color: var(--color-primary);
-            text-transform: uppercase;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 0.95rem;
-            color: #7a716a;
-            font-style: italic;
-        }
-
         .container {
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* Cabecera, Logo y Slogan */
+        header {
+            text-align: center;
+            padding: 30px 20px 20px 20px;
+        }
+
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: var(--color-light);
+            border: 1px dashed var(--color-primary);
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            overflow: hidden;
+        }
+
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        header h1 {
+            font-weight: 400;
+            letter-spacing: 5px;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            font-size: 2.1rem;
+            margin-bottom: 5px;
+        }
+
+        .slogan {
+            font-size: 1.05rem;
+            color: var(--color-medium);
+            font-style: italic;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 400;
         }
 
         .intro-box {
@@ -58,61 +86,139 @@
             padding: 20px;
             border-radius: 8px;
             text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            margin-bottom: 35px;
+            box-shadow: 0 4px 6px rgba(74, 53, 37, 0.02);
+            font-size: 0.95rem;
+            color: var(--color-primary);
         }
 
-        .aromas-title {
+        .section-title {
             text-align: center;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1.1rem;
+            letter-spacing: 3px;
+            font-size: 1.2rem;
             color: var(--color-primary);
-            margin-bottom: 20px;
+            margin: 30px 0 20px 0;
+            position: relative;
         }
 
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1.5px;
+            background-color: var(--color-primary);
+            margin: 8px auto 0 auto;
+        }
+
+        /* Tarjeta de Aromas con Foto */
         .aroma-card {
             background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border: 1px solid #f0eae4;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            transition: transform 0.2s;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid var(--color-accent);
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(74, 53, 37, 0.03);
+            transition: transform 0.2s, border-color 0.2s;
         }
 
         .aroma-card:hover {
             transform: translateY(-2px);
-            border-color: var(--color-accent);
+            border-color: var(--color-medium);
+        }
+
+        .aroma-photo-placeholder {
+            width: 100%;
+            height: 220px;
+            background-color: var(--color-light);
+            border-bottom: 1px solid var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-medium);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aroma-photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .aroma-content {
+            padding: 20px;
         }
 
         .aroma-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 10px;
         }
 
         .aroma-name {
             font-weight: bold;
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             color: var(--color-primary);
         }
 
         .aroma-tag {
             font-size: 0.75rem;
             background-color: var(--color-bg);
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--color-text);
+            color: var(--color-medium);
+            font-weight: 500;
         }
 
         .aroma-desc {
             font-size: 0.9rem;
-            color: #6e655f;
+            color: var(--color-medium);
+        }
+
+        /* Sección de Combos */
+        .combo-card {
+            background-color: #fff;
+            border: 2px dashed var(--color-accent);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(74, 53, 37, 0.02);
+        }
+
+        .combo-badge {
+            background-color: var(--color-medium);
+            color: #fff;
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .combo-title {
+            font-size: 1.3rem;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .combo-desc {
+            font-size: 0.9rem;
+            color: var(--color-medium);
+            margin-bottom: 15px;
         }
 
         /* Formulario y Botón de Acción */
@@ -120,9 +226,10 @@
             background-color: #fff;
             border: 1px solid var(--color-accent);
             padding: 25px;
-            border-radius: 8px;
+            border-radius: 12px;
             margin-top: 35px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(74, 53, 37, 0.03);
         }
 
         .order-section h3 {
@@ -134,33 +241,74 @@
 
         .select-aroma {
             width: 100%;
-            padding: 12px;
-            border-radius: 6px;
+            padding: 14px;
+            border-radius: 8px;
             border: 1px solid var(--color-accent);
             background-color: var(--color-bg);
-            color: var(--color-text);
+            color: var(--color-primary);
             font-size: 1rem;
             margin-bottom: 20px;
             outline: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2370533c'><polygon points='0,0 10,0 5,5'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
         }
 
         .btn-whatsapp {
             display: inline-block;
             width: 100%;
-            background-color: #25D366; /* Verde WhatsApp */
+            background-color: #25D366;
             color: white;
             padding: 14px;
-            border-radius: 6px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.05rem;
             transition: background-color 0.2s;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.15);
         }
 
         .btn-whatsapp:hover {
             background-color: #1ebd58;
+        }
+
+        /* Enlace a Instagram */
+        .instagram-banner {
+            background-color: var(--color-light);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid var(--color-accent);
+        }
+
+        .instagram-banner p {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            color: var(--color-medium);
+        }
+
+        .btn-instagram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #fff;
+            background: linear-gradient(45deg, #70533c 0%, #4a3525 100%); /* Instagram personalizado en tonos marrones elegantes */
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+            border: 1px solid var(--color-accent);
+        }
+
+        .btn-instagram:hover {
+            opacity: 0.9;
         }
 
         footer {
@@ -169,7 +317,7 @@
             padding: 20px 0;
             font-size: 0.8rem;
             color: #9e948d;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--color-accent);
         }
     </style>
 </head>
@@ -177,77 +325,136 @@
 
     <div class="container">
         
+        <!-- CABECERA PRINCIPAL -->
         <header>
+            <div class="logo-placeholder">
+                <img src="logo.png" alt="Tierra Calma" onerror="this.style.display='none';">
+                <span>Logo</span>
+            </div>
             <h1>Tierra Calma</h1>
-            <p>Velas aromáticas artesanales de soja para pausar y conectar</p>
+            <p class="slogan">“Tu pausa encendida”</p>
         </header>
 
         <div class="intro-box">
             <p>✨ Hechas a mano con cera de soja 100% natural, pabilos de puro algodón y esencias premium seleccionadas para ambientar tus momentos preferidos.</p>
         </div>
 
-        <h2 class="aromas-title">Nuestras 5 Variedades</h2>
+        <h2 class="section-title">Aromas para tus Pausas</h2>
 
-        <!-- Aroma 1 -->
+        <!-- Aroma 1: Vanilla -->
         <div class="aroma-card">
-            <div class="aroma-header">
-                <span class="aroma-name">Vanilla</span>
-                <span class="aroma-tag">Dulce y Cálido</span>
+            <div class="aroma-photo-placeholder">
+                <img src="vanilla.jpg" alt="Vela de Vanilla" onerror="this.style.display='none';">
+                <span>Foto Vela Vanilla</span>
             </div>
-            <p class="aroma-desc">Un clásico reconfortante. Llena el ambiente de un aroma dulce, suave y acogedor, ideal para crear un clima de paz en el living o dormitorio.</p>
+            <div class="aroma-content">
+                <div class="aroma-header">
+                    <span class="aroma-name">Vanilla</span>
+                    <span class="aroma-tag">Dulce y Cálido</span>
+                </div>
+                <p class="aroma-desc">Un clásico reconfortante. Llena el ambiente de un aroma dulce, suave y acogedor, ideal para crear un clima de paz en el living o dormitorio.</p>
+            </div>
         </div>
 
-        <!-- Aroma 2 -->
+        <!-- Aroma 2: Coco y Vanilla -->
         <div class="aroma-card">
-            <div class="aroma-header">
-                <span class="aroma-name">Coco y Vanilla</span>
-                <span class="aroma-tag">Exótico y Dulce</span>
+            <div class="aroma-photo-placeholder">
+                <img src="coco-vanilla.jpg" alt="Vela de Coco y Vanilla" onerror="this.style.display='none';">
+                <span>Foto Vela Coco y Vanilla</span>
             </div>
-            <p class="aroma-desc">La combinación perfecta entre la frescura tropical del coco y la calidez de la vainilla. Te transporta inmediatamente a un estado de calma veraniega.</p>
+            <div class="aroma-content">
+                <div class="aroma-header">
+                    <span class="aroma-name">Coco y Vanilla</span>
+                    <span class="aroma-tag">Exótico y Dulce</span>
+                </div>
+                <p class="aroma-desc">La combinación perfecta entre la frescura tropical del coco y la calidez de la vainilla. Te transporta inmediatamente a un estado de calma veraniega.</p>
+            </div>
         </div>
 
-        <!-- Aroma 3 -->
+        <!-- Aroma 3: Verbena -->
         <div class="aroma-card">
-            <div class="aroma-header">
-                <span class="aroma-name">Verbena</span>
-                <span class="aroma-tag">Cítrico y Fresco</span>
+            <div class="aroma-photo-placeholder">
+                <img src="verbena.jpg" alt="Vela de Verbena" onerror="this.style.display='none';">
+                <span>Foto Vela Verbena</span>
             </div>
-            <p class="aroma-desc">Energizante y súper limpio. Con notas cítricas y alimonadas que purifican el ambiente, ideal para el home office, el estudio o para renovar el aire de tu casa.</p>
+            <div class="aroma-content">
+                <div class="aroma-header">
+                    <span class="aroma-name">Verbena</span>
+                    <span class="aroma-tag">Cítrico y Fresco</span>
+                </div>
+                <p class="aroma-desc">Energizante y súper limpio. Con notas cítricas y alimonadas que purifican el ambiente, ideal para el home office, el estudio o para renovar el aire de tu casa.</p>
+            </div>
         </div>
 
-        <!-- Aroma 4 -->
+        <!-- Aroma 4: Rosas -->
         <div class="aroma-card">
-            <div class="aroma-header">
-                <span class="aroma-name">Rosas</span>
-                <span class="aroma-tag">Floral y Elegante</span>
+            <div class="aroma-photo-placeholder">
+                <img src="rosas.jpg" alt="Vela de Rosas" onerror="this.style.display='none';">
+                <span>Foto Vela Rosas</span>
             </div>
-            <p class="aroma-desc">Un aroma romántico, sutil y delicado. Recrea la sensación de un jardín en primavera, trayendo armonía y elegancia a cualquier rincón.</p>
+            <div class="aroma-content">
+                <div class="aroma-header">
+                    <span class="aroma-name">Rosas</span>
+                    <span class="aroma-tag">Floral y Elegante</span>
+                </div>
+                <p class="aroma-desc">Un aroma romántico, sutil y delicado. Recrea la sensación de un jardín en primavera, trayendo armonía y elegancia a cualquier rincón.</p>
+            </div>
         </div>
 
-        <!-- Aroma 5 -->
+        <!-- Aroma 5: Pomelo -->
         <div class="aroma-card">
-            <div class="aroma-header">
-                <span class="aroma-name">Pomelo</span>
-                <span class="aroma-tag">Frutal y Chispeante</span>
+            <div class="aroma-photo-placeholder">
+                <img src="pomelo.jpg" alt="Vela de Pomelo" onerror="this.style.display='none';">
+                <span>Foto Vela Pomelo</span>
             </div>
-            <p class="aroma-desc">Fresco, ácido y revitalizante. El aroma a pomelo despierta los sentidos y llena tus espacios de luz y buenas vibras desde el primer encendido.</p>
+            <div class="aroma-content">
+                <div class="aroma-header">
+                    <span class="aroma-name">Pomelo</span>
+                    <span class="aroma-tag">Frutal y Chispeante</span>
+                </div>
+                <p class="aroma-desc">Fresco, ácido y revitalizante. El aroma a pomelo despierta los sentidos y llena tus espacios de luz y buenas vibras desde el primer encendido.</p>
+            </div>
         </div>
 
-        <!-- Sección de Pedido -->
+        <h2 class="section-title">Nuestros Combos</h2>
+
+        <!-- SECCIÓN DE COMBOS -->
+        <div class="combo-card">
+            <span class="combo-badge">Más buscado</span>
+            <div class="combo-title">Combo Dúo Pausa</div>
+            <p class="combo-desc">Llevate 2 velas con tus aromas preferidos combinados y disfrutá de un descuento especial para aromatizar diferentes espacios de tu casa.</p>
+        </div>
+
+        <div class="combo-card">
+            <span class="combo-badge">Especial Regalo</span>
+            <div class="combo-title">Experiencia Completa (x3)</div>
+            <p class="combo-desc">Una selección de 3 aromas diferentes presentados en un packaging especial de lienzo. Ideal para regalar paz y calidez a quien más querés.</p>
+        </div>
+
+        <!-- SECCIÓN DE COMPRA / WHATSAPP -->
         <div class="order-section">
             <h3>¿Querés hacer tu pedido?</h3>
-            <p style="font-size: 0.9rem; color: #6e655f; margin-bottom: 15px;">Seleccioná el aroma que querés consultar y te llevamos directo a nuestro WhatsApp:</p>
+            <p style="font-size: 0.9rem; color: var(--color-medium); margin-bottom: 15px;">Seleccioná el aroma o combo que te gustó y te llevamos directo a nuestro WhatsApp:</p>
             
             <select id="aromaSelect" class="select-aroma">
-                <option value="Vanilla">Vela de Vanilla</option>
-                <option value="Coco y Vanilla">Vela de Coco y Vanilla</option>
-                <option value="Verbena">Vela de Verbena</option>
-                <option value="Rosas">Vela de Rosas</option>
-                <option value="Pomelo">Vela de Pomelo</option>
-                <option value="Combo Tierra Calma (¡Quiero probar varios!)">Combo Personalizado (¡Quiero probar varios!)</option>
+                <option value="Vela de Vanilla">Vela de Vanilla</option>
+                <option value="Vela de Coco y Vanilla">Vela de Coco y Vanilla</option>
+                <option value="Vela de Verbena">Vela de Verbena</option>
+                <option value="Vela de Rosas">Vela de Rosas</option>
+                <option value="Vela de Pomelo">Vela de Pomelo</option>
+                <option value="Combo Dúo Pausa (2 velas)">Combo Dúo Pausa (2 velas)</option>
+                <option value="Experiencia Completa (3 velas)">Experiencia Completa (3 velas)</option>
             </select>
 
             <button onclick="enviarPedido()" class="btn-whatsapp">Consultar por WhatsApp 📱</button>
+        </div>
+
+        <!-- BOTÓN DE INSTAGRAM -->
+        <div class="instagram-banner">
+            <p>📸 Seguinos para ver el detrás de escena, tips de cuidado y novedades</p>
+            <a href="https://www.instagram.com/tierracalma__" target="_blank" class="btn-instagram">
+                @tierracalma__ en Instagram
+            </a>
         </div>
 
         <footer>
@@ -258,14 +465,14 @@
 
     <script>
         function enviarPedido() {
-            // Reemplacen el número de abajo por su número de celular (con código de país, sin el + ni el 15)
-            // Ej: 5491122334455 para Argentina (CABA/GBA)
+            // Reemplacen las X de abajo por su número de celular (con código de país, sin el + ni el 15)
+            // Ej: 5491122334455 para Argentina
             const numeroTelefono = "549XXXXXXXXXX"; 
             
             const selectElement = document.getElementById("aromaSelect");
             const aromaElegido = selectElement.options[selectElement.selectedIndex].value;
             
-            const mensaje = encodeURIComponent("¡Hola Tierra Calma! Estuve viendo la web y me interesa consultar por la vela de: " + aromaElegido);
+            const mensaje = encodeURIComponent("¡Hola Tierra Calma! Estuve viendo la web y me interesa consultar por: " + aromaElegido);
             const urlWhatsApp = "https://wa.me/" + numeroTelefono + "?text=" + mensaje;
             
             window.open(urlWhatsApp, '_blank');
