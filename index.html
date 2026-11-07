@@ -25,7 +25,7 @@
             color: var(--color-primary);
             font-family: var(--font-family);
             line-height: 1.6;
-            padding: 20px;
+            padding: 20px 20px 100px 20px; /* Espacio extra abajo por la barra flotante */
         }
 
         .container {
@@ -40,8 +40,8 @@
         }
 
         .logo-placeholder {
-            width: 100px;
-            height: 100px;
+            width: 95px;
+            height: 95px;
             border-radius: 50%;
             background-color: var(--color-light);
             border: 1px dashed var(--color-primary);
@@ -84,12 +84,11 @@
             background-color: #fff;
             border: 1px solid var(--color-accent);
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             text-align: center;
             margin-bottom: 35px;
             box-shadow: 0 4px 6px rgba(74, 53, 37, 0.02);
             font-size: 0.95rem;
-            color: var(--color-primary);
         }
 
         .section-title {
@@ -98,7 +97,7 @@
             letter-spacing: 3px;
             font-size: 1.2rem;
             color: var(--color-primary);
-            margin: 30px 0 20px 0;
+            margin: 35px 0 20px 0;
             position: relative;
         }
 
@@ -111,23 +110,17 @@
             margin: 8px auto 0 auto;
         }
 
-        /* Tarjeta de Aromas con Foto */
-        .aroma-card {
+        /* Tarjeta de Producto / Vela */
+        .product-card {
             background-color: #fff;
             border-radius: 12px;
             margin-bottom: 25px;
             border: 1px solid var(--color-accent);
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(74, 53, 37, 0.03);
-            transition: transform 0.2s, border-color 0.2s;
         }
 
-        .aroma-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--color-medium);
-        }
-
-        .aroma-photo-placeholder {
+        .product-photo-placeholder {
             width: 100%;
             height: 220px;
             background-color: var(--color-light);
@@ -143,7 +136,7 @@
             overflow: hidden;
         }
 
-        .aroma-photo-placeholder img {
+        .product-photo-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -152,24 +145,24 @@
             left: 0;
         }
 
-        .aroma-content {
+        .product-content {
             padding: 20px;
         }
 
-        .aroma-header {
+        .product-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .aroma-name {
+        .product-name {
             font-weight: bold;
             font-size: 1.25rem;
             color: var(--color-primary);
         }
 
-        .aroma-tag {
+        .product-tag {
             font-size: 0.75rem;
             background-color: var(--color-bg);
             padding: 4px 12px;
@@ -180,38 +173,90 @@
             font-weight: 500;
         }
 
-        .aroma-desc {
+        .product-desc {
             font-size: 0.9rem;
             color: var(--color-medium);
+            margin-bottom: 15px;
         }
 
-        /* Sección de Combos */
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px dashed var(--color-accent);
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        /* Controles de Cantidad (+ / -) */
+        .qty-controls {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--color-light);
+            border: 1px solid var(--color-accent);
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            font-weight: bold;
+            width: 38px;
+            height: 38px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+            user-select: none;
+        }
+
+        .qty-btn:active {
+            background-color: var(--color-accent);
+        }
+
+        .qty-number {
+            min-width: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+            color: var(--color-primary);
+        }
+
+        /* Tarjeta de Combos */
         .combo-card {
             background-color: #fff;
             border: 2px dashed var(--color-accent);
             border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-            text-align: center;
+            padding: 22px;
+            margin-bottom: 25px;
             box-shadow: 0 4px 10px rgba(74, 53, 37, 0.02);
         }
 
         .combo-badge {
             background-color: var(--color-medium);
             color: #fff;
-            padding: 4px 15px;
+            padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             display: inline-block;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .combo-title {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--color-primary);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: bold;
         }
 
@@ -221,66 +266,81 @@
             margin-bottom: 15px;
         }
 
-        /* Formulario y Botón de Acción */
-        .order-section {
-            background-color: #fff;
-            border: 1px solid var(--color-accent);
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 35px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(74, 53, 37, 0.03);
-        }
-
-        .order-section h3 {
-            color: var(--color-primary);
-            margin-bottom: 15px;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-
-        .select-aroma {
+        /* Barra Flotante del Carrito */
+        .cart-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            padding: 14px;
-            border-radius: 8px;
-            border: 1px solid var(--color-accent);
-            background-color: var(--color-bg);
-            color: var(--color-primary);
-            font-size: 1rem;
-            margin-bottom: 20px;
-            outline: none;
-            appearance: none;
-            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2370533c'><polygon points='0,0 10,0 5,5'/></svg>");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
+            background-color: #ffffff;
+            border-top: 2px solid var(--color-accent);
+            box-shadow: 0 -5px 20px rgba(74, 53, 37, 0.12);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+            transform: translateY(120%);
+            transition: transform 0.3s ease-in-out;
         }
 
-        .btn-whatsapp {
-            display: inline-block;
+        .cart-bar.active {
+            transform: translateY(0);
+        }
+
+        .cart-bar-content {
+            max-width: 600px;
             width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cart-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-count {
+            font-size: 0.85rem;
+            color: var(--color-medium);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cart-total {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .btn-checkout {
             background-color: #25D366;
             color: white;
-            padding: 14px;
+            padding: 12px 20px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.05rem;
-            transition: background-color 0.2s;
+            font-size: 0.95rem;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);
+            transition: background-color 0.2s;
         }
 
-        .btn-whatsapp:hover {
+        .btn-checkout:hover {
             background-color: #1ebd58;
         }
 
-        /* Enlace a Instagram */
+        /* Banner Instagram */
         .instagram-banner {
             background-color: var(--color-light);
             border-radius: 12px;
             padding: 20px;
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
             border: 1px solid var(--color-accent);
         }
@@ -297,23 +357,18 @@
             justify-content: center;
             gap: 8px;
             color: #fff;
-            background: linear-gradient(45deg, #70533c 0%, #4a3525 100%); /* Instagram personalizado en tonos marrones elegantes */
+            background: linear-gradient(45deg, #70533c 0%, #4a3525 100%);
             padding: 10px 25px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
             font-size: 0.9rem;
-            transition: opacity 0.2s;
             border: 1px solid var(--color-accent);
-        }
-
-        .btn-instagram:hover {
-            opacity: 0.9;
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
             padding: 20px 0;
             font-size: 0.8rem;
             color: #9e948d;
@@ -341,115 +396,154 @@
 
         <h2 class="section-title">Aromas para tus Pausas</h2>
 
-        <!-- Aroma 1: Vanilla -->
-        <div class="aroma-card">
-            <div class="aroma-photo-placeholder">
+        <!-- PRODUCTO 1: Vanilla -->
+        <div class="product-card">
+            <div class="product-photo-placeholder">
                 <img src="vanilla.jpg" alt="Vela de Vanilla" onerror="this.style.display='none';">
                 <span>Foto Vela Vanilla</span>
             </div>
-            <div class="aroma-content">
-                <div class="aroma-header">
-                    <span class="aroma-name">Vanilla</span>
-                    <span class="aroma-tag">Dulce y Cálido</span>
+            <div class="product-content">
+                <div class="product-header">
+                    <span class="product-name">Vanilla</span>
+                    <span class="product-tag">Dulce y Cálido</span>
                 </div>
-                <p class="aroma-desc">Un clásico reconfortante. Llena el ambiente de un aroma dulce, suave y acogedor, ideal para crear un clima de paz en el living o dormitorio.</p>
+                <p class="product-desc">Un clásico reconfortante. Llena el ambiente de un aroma dulce, suave y acogedor, ideal para crear un clima de paz en el living o dormitorio.</p>
+                <div class="product-footer">
+                    <span class="product-price">$10.500</span>
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="updateQty('Vela Vanilla', 10500, -1)">-</button>
+                        <span class="qty-number" id="qty-Vela Vanilla">0</span>
+                        <button class="qty-btn" onclick="updateQty('Vela Vanilla', 10500, 1)">+</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Aroma 2: Coco y Vanilla -->
-        <div class="aroma-card">
-            <div class="aroma-photo-placeholder">
+        <!-- PRODUCTO 2: Coco y Vanilla -->
+        <div class="product-card">
+            <div class="product-photo-placeholder">
                 <img src="coco-vanilla.jpg" alt="Vela de Coco y Vanilla" onerror="this.style.display='none';">
                 <span>Foto Vela Coco y Vanilla</span>
             </div>
-            <div class="aroma-content">
-                <div class="aroma-header">
-                    <span class="aroma-name">Coco y Vanilla</span>
-                    <span class="aroma-tag">Exótico y Dulce</span>
+            <div class="product-content">
+                <div class="product-header">
+                    <span class="product-name">Coco y Vanilla</span>
+                    <span class="product-tag">Exótico y Dulce</span>
                 </div>
-                <p class="aroma-desc">La combinación perfecta entre la frescura tropical del coco y la calidez de la vainilla. Te transporta inmediatamente a un estado de calma veraniega.</p>
+                <p class="product-desc">La combinación perfecta entre la frescura tropical del coco y la calidez de la vainilla. Te transporta a un estado de calma veraniega.</p>
+                <div class="product-footer">
+                    <span class="product-price">$10.500</span>
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="updateQty('Vela Coco y Vanilla', 10500, -1)">-</button>
+                        <span class="qty-number" id="qty-Vela Coco y Vanilla">0</span>
+                        <button class="qty-btn" onclick="updateQty('Vela Coco y Vanilla', 10500, 1)">+</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Aroma 3: Verbena -->
-        <div class="aroma-card">
-            <div class="aroma-photo-placeholder">
+        <!-- PRODUCTO 3: Verbena -->
+        <div class="product-card">
+            <div class="product-photo-placeholder">
                 <img src="verbena.jpg" alt="Vela de Verbena" onerror="this.style.display='none';">
                 <span>Foto Vela Verbena</span>
             </div>
-            <div class="aroma-content">
-                <div class="aroma-header">
-                    <span class="aroma-name">Verbena</span>
-                    <span class="aroma-tag">Cítrico y Fresco</span>
+            <div class="product-content">
+                <div class="product-header">
+                    <span class="product-name">Verbena</span>
+                    <span class="product-tag">Cítrico y Fresco</span>
                 </div>
-                <p class="aroma-desc">Energizante y súper limpio. Con notas cítricas y alimonadas que purifican el ambiente, ideal para el home office, el estudio o para renovar el aire de tu casa.</p>
+                <p class="product-desc">Energizante y súper limpio. Notas cítricas y alimonadas que purifican el ambiente, ideal para el home office o renovar el aire.</p>
+                <div class="product-footer">
+                    <span class="product-price">$10.500</span>
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="updateQty('Vela Verbena', 10500, -1)">-</button>
+                        <span class="qty-number" id="qty-Vela Verbena">0</span>
+                        <button class="qty-btn" onclick="updateQty('Vela Verbena', 10500, 1)">+</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Aroma 4: Rosas -->
-        <div class="aroma-card">
-            <div class="aroma-photo-placeholder">
+        <!-- PRODUCTO 4: Rosas -->
+        <div class="product-card">
+            <div class="product-photo-placeholder">
                 <img src="rosas.jpg" alt="Vela de Rosas" onerror="this.style.display='none';">
                 <span>Foto Vela Rosas</span>
             </div>
-            <div class="aroma-content">
-                <div class="aroma-header">
-                    <span class="aroma-name">Rosas</span>
-                    <span class="aroma-tag">Floral y Elegante</span>
+            <div class="product-content">
+                <div class="product-header">
+                    <span class="product-name">Rosas</span>
+                    <span class="product-tag">Floral y Elegante</span>
                 </div>
-                <p class="aroma-desc">Un aroma romántico, sutil y delicado. Recrea la sensación de un jardín en primavera, trayendo armonía y elegancia a cualquier rincón.</p>
+                <p class="product-desc">Un aroma romántico, sutil y delicado. Recrea la sensación de un jardín en flor, trayendo armonía y elegancia a cualquier rincón.</p>
+                <div class="product-footer">
+                    <span class="product-price">$10.500</span>
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="updateQty('Vela Rosas', 10500, -1)">-</button>
+                        <span class="qty-number" id="qty-Vela Rosas">0</span>
+                        <button class="qty-btn" onclick="updateQty('Vela Rosas', 10500, 1)">+</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Aroma 5: Pomelo -->
-        <div class="aroma-card">
-            <div class="aroma-photo-placeholder">
+        <!-- PRODUCTO 5: Pomelo -->
+        <div class="product-card">
+            <div class="product-photo-placeholder">
                 <img src="pomelo.jpg" alt="Vela de Pomelo" onerror="this.style.display='none';">
                 <span>Foto Vela Pomelo</span>
             </div>
-            <div class="aroma-content">
-                <div class="aroma-header">
-                    <span class="aroma-name">Pomelo</span>
-                    <span class="aroma-tag">Frutal y Chispeante</span>
+            <div class="product-content">
+                <div class="product-header">
+                    <span class="product-name">Pomelo</span>
+                    <span class="product-tag">Frutal y Chispeante</span>
                 </div>
-                <p class="aroma-desc">Fresco, ácido y revitalizante. El aroma a pomelo despierta los sentidos y llena tus espacios de luz y buenas vibras desde el primer encendido.</p>
+                <p class="product-desc">Fresco, ácido y revitalizante. Despierta los sentidos y llena tus espacios de luz y buenas vibras desde el primer encendido.</p>
+                <div class="product-footer">
+                    <span class="product-price">$10.500</span>
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="updateQty('Vela Pomelo', 10500, -1)">-</button>
+                        <span class="qty-number" id="qty-Vela Pomelo">0</span>
+                        <button class="qty-btn" onclick="updateQty('Vela Pomelo', 10500, 1)">+</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <h2 class="section-title">Nuestros Combos</h2>
 
-        <!-- SECCIÓN DE COMBOS -->
+        <!-- COMBO 1: Dúo -->
         <div class="combo-card">
             <span class="combo-badge">Más buscado</span>
-            <div class="combo-title">Combo Dúo Pausa</div>
-            <p class="combo-desc">Llevate 2 velas con tus aromas preferidos combinados y disfrutá de un descuento especial para aromatizar diferentes espacios de tu casa.</p>
+            <div class="combo-title">Combo Dúo Pausa (2 velas)</div>
+            <p class="combo-desc">Elegí tus 2 aromas preferidos combinados y aprovechá un descuento especial para aromatizar diferentes ambientes.</p>
+            <div class="product-footer">
+                <span class="product-price">$19.900</span>
+                <div class="qty-controls">
+                    <button class="qty-btn" onclick="updateQty('Combo Dúo Pausa (2 velas)', 19900, -1)">-</button>
+                    <span class="qty-number" id="qty-Combo Dúo Pausa (2 velas)">0</span>
+                    <button class="qty-btn" onclick="updateQty('Combo Dúo Pausa (2 velas)', 19900, 1)">+</button>
+                </div>
+            </div>
         </div>
 
+        <!-- COMBO 2: Trío -->
         <div class="combo-card">
             <span class="combo-badge">Especial Regalo</span>
-            <div class="combo-title">Experiencia Completa (x3)</div>
-            <p class="combo-desc">Una selección de 3 aromas diferentes presentados en un packaging especial de lienzo. Ideal para regalar paz y calidez a quien más querés.</p>
+            <div class="combo-title">Experiencia Completa (3 velas)</div>
+            <p class="combo-desc">Una selección de 3 aromas diferentes presentados en packaging especial de lienzo. Ideal para regalar o regalarte.</p>
+            <div class="product-footer">
+                <span class="product-price">$28.500</span>
+                <div class="qty-controls">
+                    <button class="qty-btn" onclick="updateQty('Experiencia Completa (3 velas)', 28500, -1)">-</button>
+                    <span class="qty-number" id="qty-Experiencia Completa (3 velas)">0</span>
+                    <button class="qty-btn" onclick="updateQty('Experiencia Completa (3 velas)', 28500, 1)">+</button>
+                </div>
+            </div>
         </div>
 
-        <!-- SECCIÓN DE COMPRA / WHATSAPP -->
-        <div class="order-section">
-            <h3>¿Querés hacer tu pedido?</h3>
-            <p style="font-size: 0.9rem; color: var(--color-medium); margin-bottom: 15px;">Seleccioná el aroma o combo que te gustó y te llevamos directo a nuestro WhatsApp:</p>
-            
-            <select id="aromaSelect" class="select-aroma">
-                <option value="Vela de Vanilla">Vela de Vanilla</option>
-                <option value="Vela de Coco y Vanilla">Vela de Coco y Vanilla</option>
-                <option value="Vela de Verbena">Vela de Verbena</option>
-                <option value="Vela de Rosas">Vela de Rosas</option>
-                <option value="Vela de Pomelo">Vela de Pomelo</option>
-                <option value="Combo Dúo Pausa (2 velas)">Combo Dúo Pausa (2 velas)</option>
-                <option value="Experiencia Completa (3 velas)">Experiencia Completa (3 velas)</option>
-            </select>
-
-            <button onclick="enviarPedido()" class="btn-whatsapp">Consultar por WhatsApp 📱</button>
-        </div>
-
-        <!-- BOTÓN DE INSTAGRAM -->
+        <!-- BANNER INSTAGRAM -->
         <div class="instagram-banner">
             <p>📸 Seguinos para ver el detrás de escena, tips de cuidado y novedades</p>
             <a href="https://www.instagram.com/tierracalma__" target="_blank" class="btn-instagram">
@@ -463,19 +557,91 @@
 
     </div>
 
+    <!-- BARRA FLOTANTE INFERIOR DEL CARRITO -->
+    <div id="cartBar" class="cart-bar">
+        <div class="cart-bar-content">
+            <div class="cart-info">
+                <span id="cartCount" class="cart-count">0 productos</span>
+                <span id="cartTotal" class="cart-total">$0</span>
+            </div>
+            <button onclick="finalizarPedidoWhatsApp()" class="btn-checkout">
+                Pedir por WhatsApp 📱
+            </button>
+        </div>
+    </div>
+
+    <!-- LÓGICA DEL CARRITO Y WHATSAPP -->
     <script>
-        function enviarPedido() {
-            // Reemplacen las X de abajo por su número de celular (con código de país, sin el + ni el 15)
-            // Ej: 5491122334455 para Argentina
-            const numeroTelefono = "549XXXXXXXXXX"; 
-            
-            const selectElement = document.getElementById("aromaSelect");
-            const aromaElegido = selectElement.options[selectElement.selectedIndex].value;
-            
-            const mensaje = encodeURIComponent("¡Hola Tierra Calma! Estuve viendo la web y me interesa consultar por: " + aromaElegido);
-            const urlWhatsApp = "https://wa.me/" + numeroTelefono + "?text=" + mensaje;
-            
-            window.open(urlWhatsApp, '_blank');
+        // CONFIGURACIÓN: Ingresen su número de celular (con código de país, sin el + ni el 15)
+        // Ej: 5491122334455 para Argentina
+        const numeroTelefono = "549XXXXXXXXXX"; 
+
+        // Estado del Carrito
+        const carrito = {};
+
+        function updateQty(nombre, precio, delta) {
+            if (!carrito[nombre]) {
+                carrito[nombre] = { cantidad: 0, precio: precio };
+            }
+
+            carrito[nombre].cantidad += delta;
+
+            if (carrito[nombre].cantidad <= 0) {
+                delete carrito[nombre];
+                document.getElementById('qty-' + nombre).innerText = 0;
+            } else {
+                document.getElementById('qty-' + nombre).innerText = carrito[nombre].cantidad;
+            }
+
+            actualizarVistaCarrito();
+        }
+
+        function actualizarVistaCarrito() {
+            let totalProductos = 0;
+            let montoTotal = 0;
+
+            for (const item in carrito) {
+                totalProductos += carrito[item].cantidad;
+                montoTotal += (carrito[item].cantidad * carrito[item].precio);
+            }
+
+            const cartBar = document.getElementById('cartBar');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+
+            if (totalProductos > 0) {
+                cartBar.classList.add('active');
+                cartCount.innerText = totalProductos + (totalProductos === 1 ? ' producto' : ' productos');
+                cartTotal.innerText = '$' + montoTotal.toLocaleString('es-AR');
+            } else {
+                cartBar.classList.remove('active');
+            }
+        }
+
+        function finalizarPedidoWhatsApp() {
+            let totalProductos = 0;
+            let montoTotal = 0;
+            let detallePedido = "";
+
+            for (const item in carrito) {
+                const subtotal = carrito[item].cantidad * carrito[item].precio;
+                detallePedido += `• ${carrito[item].cantidad}x ${item} ($${subtotal.toLocaleString('es-AR')})\n`;
+                totalProductos += carrito[item].cantidad;
+                montoTotal += subtotal;
+            }
+
+            if (totalProductos === 0) return;
+
+            const mensaje = 
+`¡Hola Tierra Calma! 👋 Estuve mirando la tienda y quiero hacer el siguiente pedido:
+
+${detallePedido}
+Total: $${montoTotal.toLocaleString('es-AR')}
+
+¿Me confirman si tienen disponibilidad y los medios de pago/envío? ¡Muchas gracias!`;
+
+            const url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
         }
     </script>
 </body>
