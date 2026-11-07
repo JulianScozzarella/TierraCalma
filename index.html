@@ -1,1 +1,275 @@
-# TierraCalma
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tierra Calma | Velas Aromáticas de Soja</title>
+    <style>
+        :root {
+            --color-bg: #fbf9f6;
+            --color-primary: #8c7867;
+            --color-text: #4a443f;
+            --color-accent: #d4c5b9;
+            --font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: #7a716a;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .intro-box {
+            background-color: #fff;
+            border: 1px solid var(--color-accent);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .aromas-title {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+
+        .aroma-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #f0eae4;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+
+        .aroma-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-accent);
+        }
+
+        .aroma-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .aroma-name {
+            font-weight: bold;
+            font-size: 1.15rem;
+            color: var(--color-primary);
+        }
+
+        .aroma-tag {
+            font-size: 0.75rem;
+            background-color: var(--color-bg);
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-text);
+        }
+
+        .aroma-desc {
+            font-size: 0.9rem;
+            color: #6e655f;
+        }
+
+        /* Formulario y Botón de Acción */
+        .order-section {
+            background-color: #fff;
+            border: 1px solid var(--color-accent);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        .order-section h3 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .select-aroma {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--color-accent);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            width: 100%;
+            background-color: #25D366; /* Verde WhatsApp */
+            color: white;
+            padding: 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebd58;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            font-size: 0.8rem;
+            color: #9e948d;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Tierra Calma</h1>
+            <p>Velas aromáticas artesanales de soja para pausar y conectar</p>
+        </header>
+
+        <div class="intro-box">
+            <p>✨ Hechas a mano con cera de soja 100% natural, pabilos de puro algodón y esencias premium seleccionadas para ambientar tus momentos preferidos.</p>
+        </div>
+
+        <h2 class="aromas-title">Nuestras 5 Variedades</h2>
+
+        <!-- Aroma 1 -->
+        <div class="aroma-card">
+            <div class="aroma-header">
+                <span class="aroma-name">Vanilla</span>
+                <span class="aroma-tag">Dulce y Cálido</span>
+            </div>
+            <p class="aroma-desc">Un clásico reconfortante. Llena el ambiente de un aroma dulce, suave y acogedor, ideal para crear un clima de paz en el living o dormitorio.</p>
+        </div>
+
+        <!-- Aroma 2 -->
+        <div class="aroma-card">
+            <div class="aroma-header">
+                <span class="aroma-name">Coco y Vanilla</span>
+                <span class="aroma-tag">Exótico y Dulce</span>
+            </div>
+            <p class="aroma-desc">La combinación perfecta entre la frescura tropical del coco y la calidez de la vainilla. Te transporta inmediatamente a un estado de calma veraniega.</p>
+        </div>
+
+        <!-- Aroma 3 -->
+        <div class="aroma-card">
+            <div class="aroma-header">
+                <span class="aroma-name">Verbena</span>
+                <span class="aroma-tag">Cítrico y Fresco</span>
+            </div>
+            <p class="aroma-desc">Energizante y súper limpio. Con notas cítricas y alimonadas que purifican el ambiente, ideal para el home office, el estudio o para renovar el aire de tu casa.</p>
+        </div>
+
+        <!-- Aroma 4 -->
+        <div class="aroma-card">
+            <div class="aroma-header">
+                <span class="aroma-name">Rosas</span>
+                <span class="aroma-tag">Floral y Elegante</span>
+            </div>
+            <p class="aroma-desc">Un aroma romántico, sutil y delicado. Recrea la sensación de un jardín en primavera, trayendo armonía y elegancia a cualquier rincón.</p>
+        </div>
+
+        <!-- Aroma 5 -->
+        <div class="aroma-card">
+            <div class="aroma-header">
+                <span class="aroma-name">Pomelo</span>
+                <span class="aroma-tag">Frutal y Chispeante</span>
+            </div>
+            <p class="aroma-desc">Fresco, ácido y revitalizante. El aroma a pomelo despierta los sentidos y llena tus espacios de luz y buenas vibras desde el primer encendido.</p>
+        </div>
+
+        <!-- Sección de Pedido -->
+        <div class="order-section">
+            <h3>¿Querés hacer tu pedido?</h3>
+            <p style="font-size: 0.9rem; color: #6e655f; margin-bottom: 15px;">Seleccioná el aroma que querés consultar y te llevamos directo a nuestro WhatsApp:</p>
+            
+            <select id="aromaSelect" class="select-aroma">
+                <option value="Vanilla">Vela de Vanilla</option>
+                <option value="Coco y Vanilla">Vela de Coco y Vanilla</option>
+                <option value="Verbena">Vela de Verbena</option>
+                <option value="Rosas">Vela de Rosas</option>
+                <option value="Pomelo">Vela de Pomelo</option>
+                <option value="Combo Tierra Calma (¡Quiero probar varios!)">Combo Personalizado (¡Quiero probar varios!)</option>
+            </select>
+
+            <button onclick="enviarPedido()" class="btn-whatsapp">Consultar por WhatsApp 📱</button>
+        </div>
+
+        <footer>
+            <p>© 2026 Tierra Calma. Hecho con amor.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function enviarPedido() {
+            // Reemplacen el número de abajo por su número de celular (con código de país, sin el + ni el 15)
+            // Ej: 5491122334455 para Argentina (CABA/GBA)
+            const numeroTelefono = "549XXXXXXXXXX"; 
+            
+            const selectElement = document.getElementById("aromaSelect");
+            const aromaElegido = selectElement.options[selectElement.selectedIndex].value;
+            
+            const mensaje = encodeURIComponent("¡Hola Tierra Calma! Estuve viendo la web y me interesa consultar por la vela de: " + aromaElegido);
+            const urlWhatsApp = "https://wa.me/" + numeroTelefono + "?text=" + mensaje;
+            
+            window.open(urlWhatsApp, '_blank');
+        }
+    </script>
+</body>
+</html>
