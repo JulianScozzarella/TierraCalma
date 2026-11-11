@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tierra Calma | Velas Aromáticas de Soja</title>
+    <title>Tierra Calma | Tu pausa encendida</title>
+    <!-- Tipografías elegantes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --color-bg: #f7f3ed; /* Arena cálido orgánico */
-            --color-primary: #4a3525; /* Marrón chocolate profundo */
-            --color-medium: #70533c; /* Marrón medio para acentos */
-            --color-accent: #decbba; /* Beige tierra para bordes */
-            --color-light: #efe6dc; /* Fondo de tarjetas y placeholders */
-            --font-family: 'Helvetica Neue', Arial, sans-serif;
+            --color-bg: #f6f1eb;          /* Fondo crema/arena suave */
+            --color-card: #ffffff;        /* Blanco puro para tarjetas */
+            --color-primary: #463222;     /* Marrón chocolate profundo */
+            --color-secondary: #6e523b;   /* Marrón tabaco medio */
+            --color-accent: #cbb59f;      /* Marrón beige cálido para bordes */
+            --color-soft: #ede3d8;        /* Beige claro para fondos secundarios */
+            --color-whatsapp: #25D366;    /* Verde oficial WhatsApp */
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
         }
 
         * {
@@ -20,273 +28,408 @@
             padding: 0;
         }
 
-        body {
+        html, body {
+            width: 100%;
+            min-height: 100vh;
             background-color: var(--color-bg);
             color: var(--color-primary);
-            font-family: var(--font-family);
+            font-family: var(--font-sans);
             line-height: 1.6;
-            padding: 20px 20px 100px 20px;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 16px 120px 16px;
         }
 
         .container {
-            max-width: 600px;
+            width: 100%;
+            max-width: 780px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Cabecera, Logo y Slogan */
+        /* ================= CABECERA Y LOGO CENTRADO ================= */
         header {
-            text-align: center;
-            padding: 30px 20px 20px 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 10px 30px 10px;
         }
 
-        .logo-placeholder {
-            width: 110px;
-            height: 110px;
+        .logo-wrapper {
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            background-color: var(--color-light);
-            border: 1px dashed var(--color-primary);
-            margin: 0 auto 15px auto;
+            background-color: var(--color-card);
+            border: 2px solid var(--color-accent);
+            box-shadow: 0 8px 20px rgba(70, 50, 34, 0.08);
+            margin: 0 auto 18px auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-primary);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             overflow: hidden;
             position: relative;
         }
 
-        .logo-placeholder.loaded {
-            border: none;
-            background-color: transparent;
-        }
-
-        .logo-placeholder img {
+        .logo-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
+            object-position: center center;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .logo-fallback {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--color-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 10px;
         }
 
         header h1 {
-            font-weight: 400;
-            letter-spacing: 5px;
+            font-family: var(--font-serif);
+            font-weight: 600;
+            letter-spacing: 6px;
             color: var(--color-primary);
             text-transform: uppercase;
-            font-size: 2.1rem;
-            margin-bottom: 5px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 6px;
+            text-align: center;
         }
 
         .slogan {
-            font-size: 1.05rem;
-            color: var(--color-medium);
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            color: var(--color-secondary);
             font-style: italic;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            font-weight: 400;
+            letter-spacing: 1.5px;
+            margin-bottom: 22px;
+            text-align: center;
         }
 
         .intro-box {
-            background-color: #fff;
+            width: 100%;
+            max-width: 620px;
+            background-color: var(--color-card);
             border: 1px solid var(--color-accent);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 18px 24px;
+            border-radius: 14px;
             text-align: center;
-            margin-bottom: 35px;
-            box-shadow: 0 4px 6px rgba(74, 53, 37, 0.02);
-            font-size: 0.95rem;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 4px 12px rgba(70, 50, 34, 0.04);
+            font-size: 0.92rem;
+            color: var(--color-secondary);
         }
 
+        /* ================= TÍTULOS DE SECCIÓN ================= */
         .section-title {
+            font-family: var(--font-serif);
             text-align: center;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 1.2rem;
+            letter-spacing: 3.5px;
+            font-size: 1.65rem;
+            font-weight: 600;
             color: var(--color-primary);
-            margin: 35px 0 20px 0;
-            position: relative;
+            margin: 35px auto 25px auto;
+            width: 100%;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 40px;
-            height: 1.5px;
-            background-color: var(--color-primary);
-            margin: 8px auto 0 auto;
+            width: 50px;
+            height: 2px;
+            background-color: var(--color-accent);
+            margin: 10px auto 0 auto;
         }
 
-        /* Tarjeta de Producto / Vela */
+        /* ================= GRILLA CENTRADA DE PRODUCTOS ================= */
+        .products-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            justify-items: center;
+            align-items: stretch;
+        }
+
         .product-card {
-            background-color: #fff;
-            border-radius: 12px;
-            margin-bottom: 25px;
+            width: 100%;
+            max-width: 360px;
+            background-color: var(--color-card);
+            border-radius: 16px;
             border: 1px solid var(--color-accent);
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(74, 53, 37, 0.03);
+            box-shadow: 0 6px 16px rgba(70, 50, 34, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .product-photo-placeholder {
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px rgba(70, 50, 34, 0.1);
+        }
+
+        .product-photo {
             width: 100%;
-            height: 220px;
-            background-color: var(--color-light);
+            height: 230px;
+            background-color: var(--color-soft);
             border-bottom: 1px solid var(--color-accent);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: var(--color-medium);
-            font-size: 0.85rem;
+            color: var(--color-secondary);
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             position: relative;
             overflow: hidden;
         }
 
-        .product-photo-placeholder img {
+        .product-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
+            object-position: center center;
+            display: block;
         }
 
-        .product-content {
-            padding: 20px;
+        .photo-icon {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+            opacity: 0.7;
         }
 
-        .product-header {
+        .product-body {
+            width: 100%;
+            padding: 22px 20px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .product-name {
-            font-weight: bold;
-            font-size: 1.25rem;
-            color: var(--color-primary);
+            flex-grow: 1;
         }
 
         .product-tag {
-            font-size: 0.75rem;
-            background-color: var(--color-bg);
-            padding: 4px 12px;
+            font-size: 0.7rem;
+            background-color: var(--color-soft);
+            color: var(--color-secondary);
+            padding: 4px 14px;
             border-radius: 20px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-medium);
-            font-weight: 500;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .product-name {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 1.55rem;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+            text-align: center;
         }
 
         .product-desc {
-            font-size: 0.9rem;
-            color: var(--color-medium);
-            margin-bottom: 15px;
+            font-size: 0.88rem;
+            color: var(--color-secondary);
+            margin-bottom: 18px;
+            text-align: center;
+            flex-grow: 1;
         }
 
         .product-footer {
+            width: 100%;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            gap: 12px;
             padding-top: 15px;
             border-top: 1px dashed var(--color-accent);
         }
 
         .product-price {
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1.25rem;
+            font-weight: 600;
             color: var(--color-primary);
         }
 
-        /* Controles de Cantidad (+ / -) */
+        /* ================= CONTROLES + / - CENTRADOS ================= */
         .qty-controls {
             display: inline-flex;
             align-items: center;
-            background-color: var(--color-light);
+            justify-content: center;
+            background-color: var(--color-soft);
             border: 1px solid var(--color-accent);
-            border-radius: 25px;
-            overflow: hidden;
+            border-radius: 30px;
+            padding: 3px;
         }
 
         .qty-btn {
-            background: none;
+            background-color: var(--color-card);
             border: none;
             color: var(--color-primary);
-            font-size: 1.2rem;
-            font-weight: bold;
-            width: 38px;
-            height: 38px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, color 0.2s;
             user-select: none;
+            box-shadow: 0 2px 5px rgba(70, 50, 34, 0.06);
         }
 
-        .qty-btn:active {
-            background-color: var(--color-accent);
+        .qty-btn:hover, .qty-btn:active {
+            background-color: var(--color-primary);
+            color: #fff;
         }
 
         .qty-number {
-            min-width: 30px;
+            min-width: 42px;
             text-align: center;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1rem;
             color: var(--color-primary);
         }
 
-        /* Tarjeta de Combos */
+        /* ================= COMBOS CENTRADOS ================= */
+        .combos-wrapper {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            justify-items: center;
+        }
+
         .combo-card {
-            background-color: #fff;
+            width: 100%;
+            max-width: 360px;
+            background-color: var(--color-card);
             border: 2px dashed var(--color-accent);
-            border-radius: 12px;
-            padding: 22px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 10px rgba(74, 53, 37, 0.02);
+            border-radius: 16px;
+            padding: 26px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            box-shadow: 0 6px 16px rgba(70, 50, 34, 0.04);
         }
 
         .combo-badge {
-            background-color: var(--color-medium);
+            background-color: var(--color-primary);
             color: #fff;
-            padding: 4px 14px;
+            padding: 5px 16px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            display: inline-block;
-            margin-bottom: 10px;
+            font-weight: 500;
+            margin-bottom: 12px;
         }
 
         .combo-title {
-            font-size: 1.25rem;
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
             color: var(--color-primary);
-            margin-bottom: 6px;
-            font-weight: bold;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
 
         .combo-desc {
-            font-size: 0.9rem;
-            color: var(--color-medium);
-            margin-bottom: 15px;
+            font-size: 0.88rem;
+            color: var(--color-secondary);
+            margin-bottom: 18px;
         }
 
-        /* Barra Flotante del Carrito */
+        /* ================= BANNER INSTAGRAM CENTRADO ================= */
+        .instagram-banner {
+            width: 100%;
+            max-width: 550px;
+            background-color: var(--color-soft);
+            border-radius: 16px;
+            padding: 26px 20px;
+            margin: 45px auto 15px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid var(--color-accent);
+        }
+
+        .instagram-banner p {
+            font-size: 0.92rem;
+            margin-bottom: 15px;
+            color: var(--color-primary);
+        }
+
+        .btn-instagram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #fff;
+            background: linear-gradient(135deg, #6e523b 0%, #463222 100%);
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(70, 50, 34, 0.18);
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn-instagram:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px 0;
+            font-size: 0.8rem;
+            color: var(--color-secondary);
+            border-top: 1px solid var(--color-accent);
+        }
+
+        /* ================= BARRA FLOTANTE DEL CARRITO ================= */
         .cart-bar {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #ffffff;
+            background-color: var(--color-card);
             border-top: 2px solid var(--color-accent);
-            box-shadow: 0 -5px 20px rgba(74, 53, 37, 0.12);
-            padding: 15px 20px;
+            box-shadow: 0 -6px 25px rgba(70, 50, 34, 0.15);
+            padding: 14px 20px;
             display: flex;
             justify-content: center;
+            align-items: center;
             z-index: 1000;
             transform: translateY(120%);
             transition: transform 0.3s ease-in-out;
@@ -308,80 +451,44 @@
         .cart-info {
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
         }
 
         .cart-count {
-            font-size: 0.85rem;
-            color: var(--color-medium);
+            font-size: 0.78rem;
+            color: var(--color-secondary);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            font-weight: 600;
         }
 
         .cart-total {
             font-size: 1.3rem;
-            font-weight: bold;
+            font-weight: 600;
             color: var(--color-primary);
         }
 
         .btn-checkout {
-            background-color: #25D366;
+            background-color: var(--color-whatsapp);
             color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95rem;
+            padding: 13px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.92rem;
             border: none;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);
-            transition: background-color 0.2s;
-        }
-
-        .btn-checkout:hover {
-            background-color: #1ebd58;
-        }
-
-        /* Banner Instagram */
-        .instagram-banner {
-            background-color: var(--color-light);
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 40px;
-            text-align: center;
-            border: 1px solid var(--color-accent);
-        }
-
-        .instagram-banner p {
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-            color: var(--color-medium);
-        }
-
-        .btn-instagram {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            color: #fff;
-            background: linear-gradient(45deg, #70533c 0%, #4a3525 100%);
-            padding: 10px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            border: 1px solid var(--color-accent);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.28);
+            transition: background-color 0.2s, transform 0.2s;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px 0;
-            font-size: 0.8rem;
-            color: #9e948d;
-            border-top: 1px solid var(--color-accent);
+        .btn-checkout:hover {
+            background-color: #1ebd58;
+            transform: translateY(-1px);
         }
     </style>
 </head>
@@ -389,186 +496,200 @@
 
     <div class="container">
         
-        <!-- CABECERA PRINCIPAL -->
+        <!-- CABECERA CENTRADA -->
         <header>
-            <div class="logo-placeholder" id="logoBox">
-                <img src="logo.png" alt="Logo Tierra Calma" 
-                     onload="document.getElementById('logoText').style.display='none'; document.getElementById('logoBox').classList.add('loaded');" 
-                     onerror="this.style.display='none';">
-                <span id="logoText">Logo</span>
+            <div class="logo-wrapper">
+                <img id="mainLogo" src="logo.png" alt="Logo Tierra Calma" 
+                     onload="document.getElementById('logoFallback').style.display='none';" 
+                     onerror="intentarOtroFormatoLogo(this)">
+                <span id="logoFallback" class="logo-fallback">Tierra<br>Calma</span>
             </div>
             <h1>Tierra Calma</h1>
             <p class="slogan">“Tu pausa encendida”</p>
+            <div class="intro-box">
+                <p>✨ Velas artesanales de cera de soja 100% natural, pabilos de puro algodón y esencias premium seleccionadas para iluminar y perfumar tus momentos de calma.</p>
+            </div>
         </header>
 
-        <div class="intro-box">
-            <p>✨ Hechas a mano con cera de soja 100% natural, pabilos de puro algodón y esencias premium seleccionadas para ambientar tus momentos preferidos.</p>
-        </div>
+        <h2 class="section-title">Nuestros 5 Aromas</h2>
 
-        <h2 class="section-title">Aromas para tus Pausas</h2>
+        <!-- GRILLA DE VELAS CENTRADA -->
+        <div class="products-grid">
 
-        <!-- PRODUCTO 1: Vanilla -->
-        <div class="product-card">
-            <div class="product-photo-placeholder">
-                <img src="vanilla.jpg" alt="Vela de Vanilla" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
-                <span>Foto Vela Vanilla</span>
-            </div>
-            <div class="product-content">
-                <div class="product-header">
-                    <span class="product-name">Vanilla</span>
+            <!-- VELA 1: Vanilla -->
+            <div class="product-card">
+                <div class="product-photo">
+                    <img src="vanilla.jpg" alt="Vela Vanilla" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                    <div>
+                        <div class="photo-icon">🕯️</div>
+                        <span>Vela Vanilla</span>
+                    </div>
+                </div>
+                <div class="product-body">
                     <span class="product-tag">Dulce y Cálido</span>
-                </div>
-                <p class="product-desc">Un clásico reconfortante. Llena el ambiente de un aroma dulce, suave y acogedor, ideal para crear un clima de paz en el living o dormitorio.</p>
-                <div class="product-footer">
-                    <span class="product-price">$10.500</span>
-                    <div class="qty-controls">
-                        <button class="qty-btn" onclick="updateQty('Vela Vanilla', 10500, -1)">-</button>
-                        <span class="qty-number" id="qty-Vela Vanilla">0</span>
-                        <button class="qty-btn" onclick="updateQty('Vela Vanilla', 10500, 1)">+</button>
+                    <h3 class="product-name">Vanilla</h3>
+                    <p class="product-desc">Un clásico reconfortante. Aroma dulce, suave y envolvente, ideal para crear un clima de paz en el living o el dormitorio.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$10.500</span>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="updateQty('Vela Vanilla', 10500, -1)">−</button>
+                            <span class="qty-number" id="qty-Vela Vanilla">0</span>
+                            <button class="qty-btn" onclick="updateQty('Vela Vanilla', 10500, 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- PRODUCTO 2: Coco y Vanilla -->
-        <div class="product-card">
-            <div class="product-photo-placeholder">
-                <img src="coco-vanilla.jpg" alt="Vela de Coco y Vanilla" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
-                <span>Foto Vela Coco y Vanilla</span>
-            </div>
-            <div class="product-content">
-                <div class="product-header">
-                    <span class="product-name">Coco y Vanilla</span>
+            <!-- VELA 2: Coco y Vanilla -->
+            <div class="product-card">
+                <div class="product-photo">
+                    <img src="coco-vanilla.jpg" alt="Vela Coco y Vanilla" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                    <div>
+                        <div class="photo-icon">🕯️</div>
+                        <span>Vela Coco y Vanilla</span>
+                    </div>
+                </div>
+                <div class="product-body">
                     <span class="product-tag">Exótico y Dulce</span>
-                </div>
-                <p class="product-desc">La combinación perfecta entre la frescura tropical del coco y la calidez de la vainilla. Te transporta a un estado de calma veraniega.</p>
-                <div class="product-footer">
-                    <span class="product-price">$10.500</span>
-                    <div class="qty-controls">
-                        <button class="qty-btn" onclick="updateQty('Vela Coco y Vanilla', 10500, -1)">-</button>
-                        <span class="qty-number" id="qty-Vela Coco y Vanilla">0</span>
-                        <button class="qty-btn" onclick="updateQty('Vela Coco y Vanilla', 10500, 1)">+</button>
+                    <h3 class="product-name">Coco y Vanilla</h3>
+                    <p class="product-desc">Equilibrio perfecto entre la frescura cremosa del coco y la calidez de la vainilla. Te transporta a un estado de calma única.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$10.500</span>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="updateQty('Vela Coco y Vanilla', 10500, -1)">−</button>
+                            <span class="qty-number" id="qty-Vela Coco y Vanilla">0</span>
+                            <button class="qty-btn" onclick="updateQty('Vela Coco y Vanilla', 10500, 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- PRODUCTO 3: Verbena -->
-        <div class="product-card">
-            <div class="product-photo-placeholder">
-                <img src="verbena.jpg" alt="Vela de Verbena" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
-                <span>Foto Vela Verbena</span>
-            </div>
-            <div class="product-content">
-                <div class="product-header">
-                    <span class="product-name">Verbena</span>
+            <!-- VELA 3: Verbena -->
+            <div class="product-card">
+                <div class="product-photo">
+                    <img src="verbena.jpg" alt="Vela Verbena" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                    <div>
+                        <div class="photo-icon">🕯️</div>
+                        <span>Vela Verbena</span>
+                    </div>
+                </div>
+                <div class="product-body">
                     <span class="product-tag">Cítrico y Fresco</span>
-                </div>
-                <p class="product-desc">Energizante y súper limpio. Notas cítricas y alimonadas que purifican el ambiente, ideal para el home office o renovar el aire.</p>
-                <div class="product-footer">
-                    <span class="product-price">$10.500</span>
-                    <div class="qty-controls">
-                        <button class="qty-btn" onclick="updateQty('Vela Verbena', 10500, -1)">-</button>
-                        <span class="qty-number" id="qty-Vela Verbena">0</span>
-                        <button class="qty-btn" onclick="updateQty('Vela Verbena', 10500, 1)">+</button>
+                    <h3 class="product-name">Verbena</h3>
+                    <p class="product-desc">Energizante y súper limpio. Notas cítricas y herbales que purifican el ambiente, ideal para el home office o renovar el aire.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$10.500</span>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="updateQty('Vela Verbena', 10500, -1)">−</button>
+                            <span class="qty-number" id="qty-Vela Verbena">0</span>
+                            <button class="qty-btn" onclick="updateQty('Vela Verbena', 10500, 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- PRODUCTO 4: Rosas -->
-        <div class="product-card">
-            <div class="product-photo-placeholder">
-                <img src="rosas.jpg" alt="Vela de Rosas" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
-                <span>Foto Vela Rosas</span>
-            </div>
-            <div class="product-content">
-                <div class="product-header">
-                    <span class="product-name">Rosas</span>
+            <!-- VELA 4: Rosas -->
+            <div class="product-card">
+                <div class="product-photo">
+                    <img src="rosas.jpg" alt="Vela Rosas" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                    <div>
+                        <div class="photo-icon">🕯️</div>
+                        <span>Vela Rosas</span>
+                    </div>
+                </div>
+                <div class="product-body">
                     <span class="product-tag">Floral y Elegante</span>
-                </div>
-                <p class="product-desc">Un aroma romántico, sutil y delicado. Recrea la sensación de un jardín en flor, trayendo armonía y elegancia a cualquier rincón.</p>
-                <div class="product-footer">
-                    <span class="product-price">$10.500</span>
-                    <div class="qty-controls">
-                        <button class="qty-btn" onclick="updateQty('Vela Rosas', 10500, -1)">-</button>
-                        <span class="qty-number" id="qty-Vela Rosas">0</span>
-                        <button class="qty-btn" onclick="updateQty('Vela Rosas', 10500, 1)">+</button>
+                    <h3 class="product-name">Rosas</h3>
+                    <p class="product-desc">Un aroma romántico, sutil y delicado. Recrea la frescura de un jardín en flor, trayendo armonía y elegancia a tu hogar.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$10.500</span>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="updateQty('Vela Rosas', 10500, -1)">−</button>
+                            <span class="qty-number" id="qty-Vela Rosas">0</span>
+                            <button class="qty-btn" onclick="updateQty('Vela Rosas', 10500, 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- PRODUCTO 5: Pomelo -->
-        <div class="product-card">
-            <div class="product-photo-placeholder">
-                <img src="pomelo.jpg" alt="Vela de Pomelo" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
-                <span>Foto Vela Pomelo</span>
-            </div>
-            <div class="product-content">
-                <div class="product-header">
-                    <span class="product-name">Pomelo</span>
+            <!-- VELA 5: Pomelo -->
+            <div class="product-card">
+                <div class="product-photo">
+                    <img src="pomelo.jpg" alt="Vela Pomelo" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                    <div>
+                        <div class="photo-icon">🕯️</div>
+                        <span>Vela Pomelo</span>
+                    </div>
+                </div>
+                <div class="product-body">
                     <span class="product-tag">Frutal y Chispeante</span>
-                </div>
-                <p class="product-desc">Fresco, ácido y revitalizante. Despierta los sentidos y llena tus espacios de luz y buenas vibras desde el primer encendido.</p>
-                <div class="product-footer">
-                    <span class="product-price">$10.500</span>
-                    <div class="qty-controls">
-                        <button class="qty-btn" onclick="updateQty('Vela Pomelo', 10500, -1)">-</button>
-                        <span class="qty-number" id="qty-Vela Pomelo">0</span>
-                        <button class="qty-btn" onclick="updateQty('Vela Pomelo', 10500, 1)">+</button>
+                    <h3 class="product-name">Pomelo</h3>
+                    <p class="product-desc">Fresco, cítrico y revitalizante. Despierta los sentidos y llena tus espacios de luz y buenas vibras desde el primer encendido.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$10.500</span>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="updateQty('Vela Pomelo', 10500, -1)">−</button>
+                            <span class="qty-number" id="qty-Vela Pomelo">0</span>
+                            <button class="qty-btn" onclick="updateQty('Vela Pomelo', 10500, 1)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-        <h2 class="section-title">Nuestros Combos</h2>
+        <h2 class="section-title">Combos Especiales</h2>
 
-        <!-- COMBO 1: Dúo -->
-        <div class="combo-card">
-            <span class="combo-badge">Más buscado</span>
-            <div class="combo-title">Combo Dúo Pausa (2 velas)</div>
-            <p class="combo-desc">Elegí tus 2 aromas preferidos combinados y aprovechá un descuento especial para aromatizar diferentes ambientes.</p>
-            <div class="product-footer">
-                <span class="product-price">$19.900</span>
-                <div class="qty-controls">
-                    <button class="qty-btn" onclick="updateQty('Combo Dúo Pausa (2 velas)', 19900, -1)">-</button>
-                    <span class="qty-number" id="qty-Combo Dúo Pausa (2 velas)">0</span>
-                    <button class="qty-btn" onclick="updateQty('Combo Dúo Pausa (2 velas)', 19900, 1)">+</button>
+        <!-- SECCIÓN COMBOS CENTRADA -->
+        <div class="combos-wrapper">
+            <div class="combo-card">
+                <div>
+                    <span class="combo-badge">Más elegido</span>
+                    <h3 class="combo-title">Combo Dúo Pausa</h3>
+                    <p class="combo-desc">Llevate 2 velas con tus aromas preferidos a elección con descuento especial para ambientar distintos espacios.</p>
+                </div>
+                <div class="product-footer">
+                    <span class="product-price">$19.900</span>
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="updateQty('Combo Dúo Pausa (2 velas)', 19900, -1)">−</button>
+                        <span class="qty-number" id="qty-Combo Dúo Pausa (2 velas)">0</span>
+                        <button class="qty-btn" onclick="updateQty('Combo Dúo Pausa (2 velas)', 19900, 1)">+</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- COMBO 2: Trío -->
-        <div class="combo-card">
-            <span class="combo-badge">Especial Regalo</span>
-            <div class="combo-title">Experiencia Completa (3 velas)</div>
-            <p class="combo-desc">Una selección de 3 aromas diferentes presentados en packaging especial de lienzo. Ideal para regalar o regalarte.</p>
-            <div class="product-footer">
-                <span class="product-price">$28.500</span>
-                <div class="qty-controls">
-                    <button class="qty-btn" onclick="updateQty('Experiencia Completa (3 velas)', 28500, -1)">-</button>
-                    <span class="qty-number" id="qty-Experiencia Completa (3 velas)">0</span>
-                    <button class="qty-btn" onclick="updateQty('Experiencia Completa (3 velas)', 28500, 1)">+</button>
+            <div class="combo-card">
+                <div>
+                    <span class="combo-badge">Ideal Regalo</span>
+                    <h3 class="combo-title">Experiencia Trío (x3)</h3>
+                    <p class="combo-desc">Selección de 3 aromas a elección presentados para regalar o disfrutar una experiencia sensorial completa en casa.</p>
+                </div>
+                <div class="product-footer">
+                    <span class="product-price">$28.500</span>
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="updateQty('Experiencia Trío (3 velas)', 28500, -1)">−</button>
+                        <span class="qty-number" id="qty-Experiencia Trío (3 velas)">0</span>
+                        <button class="qty-btn" onclick="updateQty('Experiencia Trío (3 velas)', 28500, 1)">+</button>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- BANNER INSTAGRAM -->
         <div class="instagram-banner">
-            <p>📸 Seguinos para ver el detrás de escena, tips de cuidado y novedades</p>
+            <p>📸 Seguinos en Instagram para ver nuestras velas encendidas, tips de cuidado y novedades</p>
             <a href="https://www.instagram.com/tierracalma__" target="_blank" class="btn-instagram">
-                @tierracalma__ en Instagram
+                @tierracalma__
             </a>
         </div>
 
         <footer>
-            <p>© 2026 Tierra Calma. Hecho con amor.</p>
+            <p>© 2026 Tierra Calma · “Tu pausa encendida” · Buenos Aires</p>
         </footer>
 
     </div>
 
-    <!-- BARRA FLOTANTE INFERIOR DEL CARRITO -->
+    <!-- BARRA FLOTANTE DEL CARRITO -->
     <div id="cartBar" class="cart-bar">
         <div class="cart-bar-content">
             <div class="cart-info">
@@ -576,17 +697,29 @@
                 <span id="cartTotal" class="cart-total">$0</span>
             </div>
             <button onclick="finalizarPedidoWhatsApp()" class="btn-checkout">
-                Pedir por WhatsApp 📱
+                Enviar Pedido por WhatsApp 📱
             </button>
         </div>
     </div>
 
-    <!-- LÓGICA DEL CARRITO Y WHATSAPP -->
     <script>
-        // Número real de Tierra Calma (+54 9 11 4563-9569)
-        const numeroTelefono = "5491145639569"; 
+        // Número oficial de WhatsApp de Tierra Calma (+54 9 11 4563-9569)
+        const numeroTelefono = "5491145639569";
 
-        // Estado del Carrito
+        // Buscador automático de formato para el logo por si se subió con otro nombre/extensión
+        const formatosLogo = ["logo.jpg", "logo.jpeg", "Logo.png", "Logo.jpg", "LOGO.png"];
+        let indiceFormato = 0;
+
+        function intentarOtroFormatoLogo(imgElement) {
+            if (indiceFormato < formatosLogo.length) {
+                imgElement.src = formatosLogo[indiceFormato];
+                indiceFormato++;
+            } else {
+                imgElement.style.display = 'none';
+            }
+        }
+
+        // Lógica del Carrito
         const carrito = {};
 
         function updateQty(nombre, precio, delta) {
@@ -621,7 +754,7 @@
 
             if (totalProductos > 0) {
                 cartBar.classList.add('active');
-                cartCount.innerText = totalProductos + (totalProductos === 1 ? ' producto' : ' productos');
+                cartCount.innerText = totalProductos + (totalProductos === 1 ? ' producto en tu carrito' : ' productos en tu carrito');
                 cartTotal.innerText = '$' + montoTotal.toLocaleString('es-AR');
             } else {
                 cartBar.classList.remove('active');
@@ -643,12 +776,12 @@
             if (totalProductos === 0) return;
 
             const mensaje = 
-`¡Hola Tierra Calma! 👋 Estuve mirando la tienda y quiero hacer el siguiente pedido:
+`¡Hola Tierra Calma! 👋 Estuve mirando la web y quiero hacer el siguiente pedido:
 
 ${detallePedido}
-Total: $${montoTotal.toLocaleString('es-AR')}
+*Total: $${montoTotal.toLocaleString('es-AR')}*
 
-¿Me confirman si tienen disponibilidad y los medios de pago/envío? ¡Muchas gracias!`;
+¿Me confirman disponibilidad y medios de pago/envío? ¡Muchas gracias!`;
 
             const url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
             window.open(url, '_blank');
