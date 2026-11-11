@@ -25,7 +25,7 @@
             color: var(--color-primary);
             font-family: var(--font-family);
             line-height: 1.6;
-            padding: 20px 20px 100px 20px; /* Espacio extra abajo por la barra flotante */
+            padding: 20px 20px 100px 20px;
         }
 
         .container {
@@ -40,8 +40,8 @@
         }
 
         .logo-placeholder {
-            width: 95px;
-            height: 95px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             background-color: var(--color-light);
             border: 1px dashed var(--color-primary);
@@ -54,12 +54,21 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             overflow: hidden;
+            position: relative;
+        }
+
+        .logo-placeholder.loaded {
+            border: none;
+            background-color: transparent;
         }
 
         .logo-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         header h1 {
@@ -382,9 +391,11 @@
         
         <!-- CABECERA PRINCIPAL -->
         <header>
-            <div class="logo-placeholder">
-                <img src="logo.png" alt="Tierra Calma" onerror="this.style.display='none';">
-                <span>Logo</span>
+            <div class="logo-placeholder" id="logoBox">
+                <img src="logo.png" alt="Logo Tierra Calma" 
+                     onload="document.getElementById('logoText').style.display='none'; document.getElementById('logoBox').classList.add('loaded');" 
+                     onerror="this.style.display='none';">
+                <span id="logoText">Logo</span>
             </div>
             <h1>Tierra Calma</h1>
             <p class="slogan">“Tu pausa encendida”</p>
@@ -399,7 +410,7 @@
         <!-- PRODUCTO 1: Vanilla -->
         <div class="product-card">
             <div class="product-photo-placeholder">
-                <img src="vanilla.jpg" alt="Vela de Vanilla" onerror="this.style.display='none';">
+                <img src="vanilla.jpg" alt="Vela de Vanilla" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
                 <span>Foto Vela Vanilla</span>
             </div>
             <div class="product-content">
@@ -422,7 +433,7 @@
         <!-- PRODUCTO 2: Coco y Vanilla -->
         <div class="product-card">
             <div class="product-photo-placeholder">
-                <img src="coco-vanilla.jpg" alt="Vela de Coco y Vanilla" onerror="this.style.display='none';">
+                <img src="coco-vanilla.jpg" alt="Vela de Coco y Vanilla" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
                 <span>Foto Vela Coco y Vanilla</span>
             </div>
             <div class="product-content">
@@ -445,7 +456,7 @@
         <!-- PRODUCTO 3: Verbena -->
         <div class="product-card">
             <div class="product-photo-placeholder">
-                <img src="verbena.jpg" alt="Vela de Verbena" onerror="this.style.display='none';">
+                <img src="verbena.jpg" alt="Vela de Verbena" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
                 <span>Foto Vela Verbena</span>
             </div>
             <div class="product-content">
@@ -468,7 +479,7 @@
         <!-- PRODUCTO 4: Rosas -->
         <div class="product-card">
             <div class="product-photo-placeholder">
-                <img src="rosas.jpg" alt="Vela de Rosas" onerror="this.style.display='none';">
+                <img src="rosas.jpg" alt="Vela de Rosas" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
                 <span>Foto Vela Rosas</span>
             </div>
             <div class="product-content">
@@ -491,7 +502,7 @@
         <!-- PRODUCTO 5: Pomelo -->
         <div class="product-card">
             <div class="product-photo-placeholder">
-                <img src="pomelo.jpg" alt="Vela de Pomelo" onerror="this.style.display='none';">
+                <img src="pomelo.jpg" alt="Vela de Pomelo" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
                 <span>Foto Vela Pomelo</span>
             </div>
             <div class="product-content">
@@ -572,9 +583,8 @@
 
     <!-- LÓGICA DEL CARRITO Y WHATSAPP -->
     <script>
-        // CONFIGURACIÓN: Ingresen su número de celular (con código de país, sin el + ni el 15)
-        // Ej: 5491122334455 para Argentina
-        const numeroTelefono = "549XXXXXXXXXX"; 
+        // Número real de Tierra Calma (+54 9 11 4563-9569)
+        const numeroTelefono = "5491145639569"; 
 
         // Estado del Carrito
         const carrito = {};
